@@ -1,116 +1,109 @@
-function generateMarkdown(userResponses, userInfo) {
+function generateMark(data, information) {
   // Table of Contents
-  let draftToC = `## Table of Contents`;
+  let contents = `## Table of Contents`;
 
-  if (userResponses.installation !== "") {
-    draftToC += `
+  if (data.installation !== "") {
+    contents += `
   * [Installation](#installation)`;
   }
 
-  if (userResponses.usage !== "") {
-    draftToC += `
+  if (data.usage !== "") {
+    contents += `
   * [Usage](#usage)`;
   }
 
-  if (userResponses.contributing !== "") {
-    draftToC += `
+  if (data.contributing !== "") {
+    contents += `
   * [Contributing](#contributing)`;
   }
 
-  if (userResponses.tests !== "") {
-    draftToC += `
+  if (data.tests !== "") {
+    contents += `
   * [Tests](#tests)`;
   }
 
   // Generate markdown
-  let draftMarkdown = `# ${userResponses.title}
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${userResponses.username}/${userResponses.repo}?style=flat&logo=appveyor)
+  let writeUp = `# ${data.title}
+  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${data.username}/${data.repo}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${data.repo}?style=flat&logo=appveyor)
   
-  Check out the badges hosted by [shields.io](https://shields.io/).
   
   
   ## Description 
   
-  *The what, why, and how:* 
   
-  ${userResponses.description}
+  ${data.description}
   `;
 
-  draftMarkdown += draftToC;
+  writeUp += contents;
 
-  draftMarkdown += `
+  writeUp += `
   * [License](#license)`;
 
-  if (userResponses.installation !== "") {
-    draftMarkdown += `
+  if (data.installation !== "") {
+    writeUp += `
   
   ## Installation
   
-  *Steps required to install project and how to get the development environment running:*
   
-  ${userResponses.installation}`;
+  ${data.installation}`;
   }
 
-  if (userResponses.usage !== "") {
-    draftMarkdown += `
+  if (data.usage !== "") {
+    writeUp += `
   
   ## Usage 
   
-  *Instructions and examples for use:*
   
-  ${userResponses.usage}`;
+  ${data.usage}`;
   }
 
-  if (userResponses.contributing !== "") {
-    draftMarkdown += `
+  if (data.contributing !== "") {
+    writeUp += `
   
   ## Contributing
   
-  *If you would like to contribute it, you can follow these guidelines for how to do so.*
   
-  ${userResponses.contributing}`;
+  ${data.contributing}`;
   }
 
 
-  if (userResponses.tests !== "") {
-    draftMarkdown += `
+  if (data.tests !== "") {
+    writeUp += `
   
   ## Tests
   
-  *Tests for application and how to run them:*
   
-  ${userResponses.tests}`;
+  ${data.tests}`;
   }
 
 
-  draftMarkdown += `
+  writeUp += `
   
   ## License
   
-  ${userResponses.license}
+  ${data.license}
   `;
 
-  let draftDev = `
+  let next = `
   ---
   
   ## Questions?
-  <img src="${userInfo.avatar_url}" alt="${userInfo.login}" width="40%" />
+  <img src="${information.avatar_url}" alt="${information.login}" width="40%" />
   
-  For any questions, please contact me with the information below:
  
-  GitHub: [@${userInfo.login}](${userInfo.url})
+  GitHub: [@${information.login}](${information.url})
   `;
 
-  // If GitHub email is not null, add to Developer section
-  if (userInfo.email !== null) {
-    draftDev += `
-  Email: ${userInfo.email}
+  // For null email
+  if (information.email !== null) {
+    next += `
+  Email: ${information.email}
   `;
   }
 
-  draftMarkdown += draftDev;
+  writeUp += next;
 
-  return draftMarkdown;
+  return writeUp;
 }
 
-module.exports = generateMarkdown;
+module.exports = generateMark;
