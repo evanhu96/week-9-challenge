@@ -1,38 +1,31 @@
 # undefined
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/evan/e?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/evan/e?style=flat&logo=appveyor)
   
   
   
   ## Description 
   
   
-  e
+  Answer the prompted questions and the program will create a readme for your project
   ## Table of Contents
   * [Installation](#installation)
   * [Usage](#usage)
-  * [Contributing](#contributing)
   * [Tests](#tests)
   * [License](#license)
   
   ## Installation
   
   
-  e
+  npm i inquirer
   
   ## Usage 
   
   
-  e
-  
-  ## Contributing
-  
-  
-  undefined
+  Just answer the questions and the program will do the rest
   
   ## Tests
   
   
-  f
+  Since the code is so simple, just answer the questions and see if it is properly made
   
   ## License
   
@@ -41,8 +34,8 @@
   ---
   
   ## Questions?
-  <img src="https://avatars.githubusercontent.com/u/210?v=4" alt="evan" width="40%" />
+  <img src="https://avatars.githubusercontent.com/u/109828768?v=4" alt="evanhu96" width="40%" />
   
  
-  GitHub: [@evan](https://api.github.com/users/evan)
+  GitHub: [@evanhu96](https://api.github.com/users/evanhu96)
   

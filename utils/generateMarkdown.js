@@ -12,10 +12,7 @@ function generateMark(data, information) {
   * [Usage](#usage)`;
   }
 
-  if (data.contributing !== "") {
-    contents += `
-  * [Contributing](#contributing)`;
-  }
+
 
   if (data.tests !== "") {
     contents += `
@@ -24,7 +21,6 @@ function generateMark(data, information) {
 
   // Generate markdown
   let writeUp = `# ${data.title}
-  ![Badge for GitHub repo top language](https://img.shields.io/github/languages/top/${data.username}/${data.repo}?style=flat&logo=appveyor) ![Badge for GitHub last commit](https://img.shields.io/github/last-commit/${data.username}/${data.repo}?style=flat&logo=appveyor)
   
   
   
@@ -57,14 +53,7 @@ function generateMark(data, information) {
   ${data.usage}`;
   }
 
-  if (data.contributing !== "") {
-    writeUp += `
-  
-  ## Contributing
-  
-  
-  ${data.contributing}`;
-  }
+
 
 
   if (data.tests !== "") {
